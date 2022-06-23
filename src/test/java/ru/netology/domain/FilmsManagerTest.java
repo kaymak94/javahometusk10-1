@@ -40,7 +40,7 @@ public class FilmsManagerTest {
     }
 
     @Test
-    public void showDefaultAddFilmsTest() {
+    public void showMoreDefaultLimitAddFilmsTest() {
         FilmsManager manager = new FilmsManager();
         manager.add(one);
         manager.add(two);
@@ -82,5 +82,43 @@ public class FilmsManagerTest {
         FilmsList[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
 
+    }
+
+    @Test
+    public void showEqualsAddFilmsTest() {
+        FilmsManager manager = new FilmsManager();
+        manager.add(one);
+        manager.add(two);
+        manager.add(three);
+        manager.add(four);
+        manager.add(five);
+        manager.add(six);
+        manager.add(seven);
+        manager.add(eight);
+        manager.add(nine);
+        manager.add(ten);
+
+        FilmsList[] expected = {ten, nine, eight, seven, six, five, four, three, two, one};
+        FilmsList[] actual = manager.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void showLessDefaultLimitAddFilmsTest() {
+        FilmsManager manager = new FilmsManager();
+        manager.add(one);
+        manager.add(two);
+        manager.add(three);
+        manager.add(four);
+        manager.add(five);
+        manager.add(six);
+        manager.add(seven);
+        manager.add(eight);
+        manager.add(nine);
+
+
+        FilmsList[] expected = {nine, eight, seven, six, five, four, three, two, one};
+        FilmsList[] actual = manager.findLast();
+        Assertions.assertArrayEquals(expected, actual);
     }
 }

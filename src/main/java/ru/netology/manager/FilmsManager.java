@@ -35,15 +35,20 @@ public class FilmsManager {
 
     public FilmsList[] findLast() {
         int resultLength = 0;
-        if (resultLength >= films.length) {
+        if (films.length > defaultFilmsLimit) {
+            resultLength = defaultFilmsLimit;
+        }
+        if (films.length <= defaultFilmsLimit) {
             resultLength = films.length;
-        } else resultLength = defaultFilmsLimit;
+        }
 
         FilmsList[] need = new FilmsList[resultLength];
         for (int i = 0; i < need.length; i++) {
             int index = films.length - i - 1;
             need[i] = films[index];
+
         }
+
         return need;
     }
 
