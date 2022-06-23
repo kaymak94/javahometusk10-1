@@ -38,7 +38,7 @@ public class FilmsManager {
             defaultFilmsLimit = films.length;
 
         }
-        FilmsList[] need = new FilmsList[defaultFilmsLimit];
+        FilmsList[] need = new FilmsList[films.length];
         for (int i = 0; i < need.length; i++) {
             int index = films.length - i - 1;
             need[i] = films[index];
