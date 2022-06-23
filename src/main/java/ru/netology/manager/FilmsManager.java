@@ -9,7 +9,7 @@ public class FilmsManager {
     private FilmsList[] films = new FilmsList[0];
 
     public FilmsManager() {
-gi
+
     }
 
     public FilmsManager(int defaultFilmsLimit) {
