@@ -80,9 +80,12 @@ public class FilmsManagerTest {
     @Test
     public void showFindAllFilmsTest() {
         FilmsManager manager = new FilmsManager();
+        manager.add(one);
+        manager.add(two);
+        manager.add(three);
+        manager.add(four);
 
-
-        FilmsList[] expected = {};
+        FilmsList[] expected = {one, two, three, four};
         FilmsList[] actual = manager.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }

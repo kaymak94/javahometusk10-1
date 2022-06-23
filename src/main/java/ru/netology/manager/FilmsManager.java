@@ -4,17 +4,19 @@ import ru.netology.domain.FilmsList;
 
 
 public class FilmsManager {
-    int defaultFilmsLimit = 10;
+
+    private int defaultFilmsLimit = 10;
+    private FilmsList[] films = new FilmsList[0];
 
     public FilmsManager() {
 
     }
 
     public FilmsManager(int defaultFilmsLimit) {
+
         this.defaultFilmsLimit = defaultFilmsLimit;
     }
 
-    private FilmsList[] films = new FilmsList[0];
 
     public void add(FilmsList film) {
 
